@@ -64,6 +64,10 @@ app.use(
 );
 // 👇 private routes below 👇
 
+app.get("/reports", (req, res) => {
+  res.send(expenses);
+});
+
 app.get("/expenses", requiresAuth(), async (req, res, next) => {
  try {
    // 👇 get the token from the request 👇
